@@ -13,9 +13,7 @@ To run the project, you can use the Gradle Wrapper provided in the repository. F
 2. Navigate to the root directory of the project where the `build.gradle` file is located.
 
 3. Run the following command:
-    ```bash
-    ./gradlew bootrun
-    ``` 
+    `./gradlew bootrun`
 ## AuthController
 
 The `AuthController` class defines endpoints for user authentication and registration.
