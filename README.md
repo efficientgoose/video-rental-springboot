@@ -2,6 +2,20 @@
 
 This project demonstrates a simple authentication and authorization system using Spring Security in a Spring Boot application.
 
+
+
+## Running the Project
+
+To run the project, you can use the Gradle Wrapper provided in the repository. Follow these steps:
+
+1. Open a terminal.
+
+2. Navigate to the root directory of the project where the `build.gradle` file is located.
+
+3. Run the following command:
+    ```bash
+    ./gradlew bootrun
+    ``` 
 ## AuthController
 
 The `AuthController` class defines endpoints for user authentication and registration.
