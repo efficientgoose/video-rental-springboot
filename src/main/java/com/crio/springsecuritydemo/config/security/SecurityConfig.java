@@ -28,10 +28,16 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
+        /**
+        * CSRF, when enabled will not let you make requests from any client except for the whitelisted clients.
+        * It is sometimes disabled while testing so that requests can be made from localhost and Postman.
+        * CSRF can be disabled in Basic Auth as it sends the username and password in the heaaders.
+        */
         httpSecurity.csrf(csrf -> csrf.disable());
 
         httpSecurity.authenticationProvider(authenticationProvider());
 
+        //Filter all requests except for /login and /register
         httpSecurity.authorizeHttpRequests(configurer -> configurer
                 .requestMatchers("/login", "/register")
                 .permitAll()
