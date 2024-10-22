@@ -24,8 +24,9 @@ import lombok.NoArgsConstructor;
 /**
  * This class represents a User in the application.
  * 
- * The class implements the UserDetails interface from Spring Security, 
- * which is necessary for Spring Security to know how to authenticate and authorize 
+ * The class implements the UserDetails interface from Spring Security,
+ * which is necessary for Spring Security to know how to authenticate and
+ * authorize
  * a user in the system.
  * 
  * By implementing UserDetails, we provide essential user information such as:
@@ -34,7 +35,8 @@ import lombok.NoArgsConstructor;
  * - Account status (locked, enabled, expired, etc.)
  * 
  * This allows Spring Security to manage authentication, session management, and
- * security checks effectively. It also helps in securely storing user credentials
+ * security checks effectively. It also helps in securely storing user
+ * credentials
  * and roles within the security context.
  */
 public class User implements UserDetails {
@@ -58,14 +60,15 @@ public class User implements UserDetails {
 
     /*
      * Returns the username or unique identifier for the user.
-     * Typically, this would be the user's email or username that was used to log in.
+     * Typically, this would be the user's email or username that was used to log
+     * in.
      */
     @Override
     public String getUsername() {
         return email;
     }
 
-     /*
+    /*
      * Indicates whether the user's account has expired.
      * In this case, it always returns true, meaning the account is not expired.
      */
@@ -74,8 +77,9 @@ public class User implements UserDetails {
         return true;
     }
 
-     /*
-     * Checks if the user's account is locked (e.g., due to multiple failed login attempts).
+    /*
+     * Checks if the user's account is locked (e.g., due to multiple failed login
+     * attempts).
      * Returning true means the account is not locked and the user can log in.
      */
     @Override
@@ -83,18 +87,21 @@ public class User implements UserDetails {
         return true;
     }
 
-     /*
+    /*
      * Indicates whether the user's credentials (password) have expired.
-     * In this case, it always returns true, meaning the credentials are not expired.
+     * In this case, it always returns true, meaning the credentials are not
+     * expired.
      */
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
-     /*
-     * Indicates whether the user's account is enabled and can be used for authentication.
-     * Returning true means the account is enabled, and the user is allowed to log in.
+    /*
+     * Indicates whether the user's account is enabled and can be used for
+     * authentication.
+     * Returning true means the account is enabled, and the user is allowed to log
+     * in.
      */
     @Override
     public boolean isEnabled() {
